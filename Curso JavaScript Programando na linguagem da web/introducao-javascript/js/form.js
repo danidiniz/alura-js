@@ -4,10 +4,8 @@ botaoAdd.addEventListener("click", function(event){
 
   document.querySelector("#mensagem-erro").innerHTML = "";
 
-  // pega dados do form
   var paciente = criarPaciente(document.querySelector("#form-adiciona"));
 
-  // validar paciente
   var erros = [];
   erros = validarPaciente(paciente);
   if(erros.length > 0){
@@ -15,10 +13,7 @@ botaoAdd.addEventListener("click", function(event){
     return;
   }
 
-  // adiciona tr na tabela
   document.querySelector("#tabela-pacientes").appendChild(criarTr(paciente));
-
-
 });
 
 function criarPaciente(form){
